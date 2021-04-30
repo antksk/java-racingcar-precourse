@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.function.Supplier;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static racingcar.domain.core.RacingCarMovementTest.RacingCarMovement.MAX_MOVE_COUNT;
+import static racingcar.domain.core.RacingCarMovement.MAX_MOVE_COUNT;
 
 @DisplayName("레이싱카 이동 테스트")
 class RacingCarMovementTest {
@@ -51,35 +51,4 @@ class RacingCarMovementTest {
         assertThat(racingCarMovement.toRender(renderStyle)).isEqualTo("----------");
     }
 
-    static final class RacingCarMovement{
-        static final int MAX_MOVE_COUNT = 10;
-        private int move;
-
-        public RacingCarMovement() {
-            this.move = 0;
-        }
-
-        static RacingCarMovement initMovement() {
-            return new RacingCarMovement();
-        }
-
-        RacingCarMovement moving() {
-            if (MAX_MOVE_COUNT > move) {
-                move++;
-            }
-            return this;
-        }
-
-        int getMovingCount() {
-            return move;
-        }
-
-        String toRender(final String renderStyle){
-            StringBuilder sb = new StringBuilder(MAX_MOVE_COUNT);
-            for (int i=0; move > i; ++i){
-                sb.append(renderStyle);
-            }
-            return sb.toString();
-        }
-    }
 }
