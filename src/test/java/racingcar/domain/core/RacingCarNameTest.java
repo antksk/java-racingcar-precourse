@@ -7,9 +7,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import static racingcar.domain.core.RacingCarName.*;
 
-public class RacingCarNameTest {
+@DisplayName("레이싱카 이름 테스트")
+class RacingCarNameTest {
 
-    @DisplayName("자동차 이름을 등록해야 함")
+    @DisplayName("레이싱카 이름을 등록해야 함")
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "null"})
     void requiredName(String carName) {
@@ -18,7 +19,7 @@ public class RacingCarNameTest {
                 .isThrownBy(()->name(testName));
     }
 
-    @DisplayName("자동차 이름은 MAX_LENGTH이하로 등록해야 함")
+    @DisplayName("레이싱카 이름은 MAX_LENGTH이하로 등록해야 함")
     @ParameterizedTest
     @ValueSource(strings = {"abcdef", "111aaa"})
     void maxLengthName(String carName) {
@@ -27,7 +28,7 @@ public class RacingCarNameTest {
                 .withMessage(ERROR_MSG_MAX_LENGHT_NAME);
     }
 
-    @DisplayName("자동차 이름은 소문자와 숫자, 특정 특수문자(-,_)로 등록해야 함")
+    @DisplayName("레이싱카 이름은 소문자와 숫자, 특정 특수문자(-,_)로 등록해야 함")
     @ParameterizedTest
     @ValueSource(strings = {"A", "abb*1", "1abcd", "a123@", "____1", "----1"})
     void validName(String carName){
