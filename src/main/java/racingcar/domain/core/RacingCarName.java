@@ -17,7 +17,7 @@ final class RacingCarName {
         this.name = name;
     }
 
-    static RacingCarName name(String name) {
+    static RacingCarName racingCarName(String name) {
         return new RacingCarName(name);
     }
 

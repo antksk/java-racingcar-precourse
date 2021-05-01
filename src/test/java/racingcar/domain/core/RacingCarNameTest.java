@@ -16,7 +16,7 @@ class RacingCarNameTest {
     void requiredName(String carName) {
         String testName = "null".equals(carName) ? null : carName;
         assertThatIllegalArgumentException()
-                .isThrownBy(()->name(testName));
+                .isThrownBy(()-> racingCarName(testName));
     }
 
     @DisplayName("레이싱카 이름은 MAX_LENGTH이하로 등록해야 함")
@@ -24,7 +24,7 @@ class RacingCarNameTest {
     @ValueSource(strings = {"abcdef", "111aaa"})
     void maxLengthName(String carName) {
         assertThatIllegalArgumentException()
-                .isThrownBy(()->name(carName))
+                .isThrownBy(()-> racingCarName(carName))
                 .withMessage(ERROR_MSG_MAX_LENGHT_NAME);
     }
 
@@ -33,7 +33,7 @@ class RacingCarNameTest {
     @ValueSource(strings = {"A", "abb*1", "1abcd", "a123@", "____1", "----1"})
     void validName(String carName){
         assertThatIllegalArgumentException()
-                .isThrownBy(()->name(carName))
+                .isThrownBy(()-> racingCarName(carName))
                 .withMessage(ERROR_MSG_VALID_NAME);
     }
 
