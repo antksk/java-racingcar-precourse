@@ -15,7 +15,7 @@ class RacingCarTest {
     void go() {
         RacingCar car = raceAttend("going");
         RacingMoveRule goRule = () -> true;
-        assertThat(car.racing(goRule).totalMovingCount()).isPositive();
+        assertThat(car.racing(goRule).toResult().getMovementCount()).isPositive();
     }
 
     @DisplayName("레이싱 자동차를 정지 시킴")
@@ -23,7 +23,7 @@ class RacingCarTest {
     void stop() {
         RacingCar car = raceAttend("stop");
         RacingMoveRule stopRule = () -> false;
-        assertThat(car.racing(stopRule).totalMovingCount()).isZero();
+        assertThat(car.racing(stopRule).toResult().getMovementCount()).isZero();
     }
 
 }
