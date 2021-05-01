@@ -8,7 +8,7 @@ final class RacingCarMovementCount {
         this.movementCount = 0;
     }
 
-    static RacingCarMovementCount initMovement() {
+    static RacingCarMovementCount initMovementCount() {
         return new RacingCarMovementCount();
     }
 

@@ -52,8 +52,7 @@ final class RacingCarName {
         return Objects.hashCode(name);
     }
 
-    @Override
-    public String toString() {
+    public String toName() {
         return name;
     }
 }

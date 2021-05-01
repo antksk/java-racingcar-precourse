@@ -20,7 +20,7 @@ class RacingCarMovementCountTest {
     @DisplayName("moving 메소드를 호출한 만큼 이동 횟수를 확인 함")
     @Test
     void moving() {
-        RacingCarMovementCount racingCarMovementCount = RacingCarMovementCount.initMovement();
+        RacingCarMovementCount racingCarMovementCount = RacingCarMovementCount.initMovementCount();
 
         assertThat(racingCarMovementCount.toCount()).isNotEqualTo(-1);
 
@@ -47,7 +47,7 @@ class RacingCarMovementCountTest {
     @DisplayName("toRender 메소드를 호출하여 지정된 문자열로 이동한 회수를 표현")
     @Test
     void rendering(){
-        RacingCarMovementCount racingCarMovementCount = RacingCarMovementCount.initMovement();
+        RacingCarMovementCount racingCarMovementCount = RacingCarMovementCount.initMovementCount();
         final String renderStyle = "-";
         assertThat(toRender(racingCarMovementCount.toCount(), renderStyle)).isEqualTo("");
 

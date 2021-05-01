@@ -3,7 +3,7 @@ package racingcar.domain.core;
 import racingcar.domain.RacingCarResult;
 import racingcar.domain.racingrule.RacingMoveRule;
 
-import static racingcar.domain.core.RacingCarMovementCount.initMovement;
+import static racingcar.domain.core.RacingCarMovementCount.initMovementCount;
 import static racingcar.domain.core.RacingCarName.racingCarName;
 
 class RacingCar {
@@ -12,7 +12,7 @@ class RacingCar {
 
     private RacingCar(String name) {
         this.racingCarName = racingCarName(name);
-        this.racingCarMovementCount = initMovement();
+        this.racingCarMovementCount = initMovementCount();
     }
 
     static RacingCar raceAttend(String name){
@@ -27,7 +27,7 @@ class RacingCar {
     }
 
     RacingCarResult toResult(){
-        return new RacingCarResult(racingCarName.toString(),
+        return new RacingCarResult(racingCarName.toName(),
                 racingCarMovementCount.toCount());
     }
 }
