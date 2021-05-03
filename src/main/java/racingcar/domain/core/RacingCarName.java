@@ -18,7 +18,7 @@ final class RacingCarName {
     }
 
     static RacingCarName racingCarName(String name) {
-        return new RacingCarName(name);
+        return new RacingCarName(name.trim());
     }
 
     private void validName(String name) {

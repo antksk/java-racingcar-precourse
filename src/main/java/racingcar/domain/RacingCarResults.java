@@ -28,7 +28,7 @@ public final class RacingCarResults {
                 winningRacingCarNames.add(racingCarResult.getRacingCarName());
             }
         }
-        return winningRacingCarNames;
+        return Collections.unmodifiableList(winningRacingCarNames);
     }
 
     @Override

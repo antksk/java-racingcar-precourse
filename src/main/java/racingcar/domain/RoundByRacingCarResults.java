@@ -14,6 +14,15 @@ public final class RoundByRacingCarResults {
         roundByRacingCarResults.add(racingCarResults);
     }
 
+    private RacingCarResults lastRacingCarResults(){
+        int lastIndex = roundByRacingCarResults.size() - 1;
+        return roundByRacingCarResults.get(lastIndex);
+    }
+
+    public List<String> toWinningRacingCarNames(){
+        return lastRacingCarResults().getWinningRacingCarNames();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
