@@ -26,8 +26,15 @@ class RacingCar {
         return this;
     }
 
+    String name(){
+        return racingCarName.toName();
+    }
+
+    int moveCount(){
+        return racingCarMovementCount.toCount();
+    }
+
     RacingCarResult toResult(){
-        return new RacingCarResult(racingCarName.toName(),
-                racingCarMovementCount.toCount());
+        return new RacingCarResult(name(), moveCount());
     }
 }
