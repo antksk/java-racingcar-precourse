@@ -24,9 +24,7 @@ public final class RacingCarResults {
         List<String> winningRacingCarNames = new ArrayList<>();
         final int maxMovementCount = getMaxMovementCount();
         for (RacingCarResult racingCarResult : racingCarResults) {
-            if (racingCarResult.equalsMovementCount(maxMovementCount)){
-                winningRacingCarNames.add(racingCarResult.getRacingCarName());
-            }
+            racingCarResult.ifEqualsCountThenWinRacingCarNames(maxMovementCount, winningRacingCarNames::add);
         }
         return Collections.unmodifiableList(winningRacingCarNames);
     }

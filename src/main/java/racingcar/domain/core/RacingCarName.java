@@ -14,11 +14,11 @@ final class RacingCarName {
         requireName(name);
         validMaxLengthName(name);
         validName(name);
-        this.name = name;
+        this.name = name.trim();
     }
 
     static RacingCarName racingCarName(String name) {
-        return new RacingCarName(name.trim());
+        return new RacingCarName(name);
     }
 
     private void validName(String name) {

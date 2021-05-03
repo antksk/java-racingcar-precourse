@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import java.util.function.Consumer;
+
 public final class RacingCarResult implements Comparable<RacingCarResult> {
     static final String RACING_CAR_MOVEMENT_RENDER_STYLE = "-";
 
@@ -29,14 +31,21 @@ public final class RacingCarResult implements Comparable<RacingCarResult> {
         return getMovementCount() - racingCarResult.getMovementCount();
     }
 
-    public String getRacingCarName(){
+    String getRacingCarName(){
         return racingCarName;
     }
+
     public int getMovementCount() {
         return movementCount;
     }
 
     boolean equalsMovementCount(int movementCount){
         return getMovementCount() == movementCount;
+    }
+
+    void ifEqualsCountThenWinRacingCarNames(final int maxMovementCount, Consumer<String> winningRacingCarNamesConsumer){
+        if (equalsMovementCount(maxMovementCount)){
+            winningRacingCarNamesConsumer.accept(getRacingCarName());
+        }
     }
 }
