@@ -31,10 +31,8 @@ public final class RacingCarResults {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (RacingCarResult racingCarResult : racingCarResults) {
-            sb.append(racingCarResult).append("\n");
-        }
-        return String.join("\n\n", sb);
+        return new ToStringRacingCarResult()
+                .forEachWithResultAndNewLine(racingCarResults)
+              .toString();
     }
 }

@@ -25,10 +25,9 @@ public final class RoundByRacingCarResults {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (RacingCarResults racingCarResult : roundByRacingCarResults) {
-            sb.append(racingCarResult).append("\n");
-        }
-        return String.join("\n\n", sb);
+        return new ToStringRacingCarResult()
+                .forEachWithResultAndNewLine(roundByRacingCarResults)
+              .toString();
     }
+
 }

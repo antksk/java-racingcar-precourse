@@ -7,7 +7,7 @@ import java.util.List;
 public class MotorRacingDisplay {
 
     public static void roundByRacingCarResultsDisplay(RoundByRacingCarResults results){
-        display("실행 결과");
+        display("\n실행 결과");
         display(results);
     }
 
